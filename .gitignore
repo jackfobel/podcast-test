@@ -9,3 +9,4 @@
 /.vs/slnx.sqlite
 /.vs/VSWorkspaceState.json
 /.vs/podcast-test/FileContentIndex/5e7cf188-db63-420a-80a7-5941cbe7852f.vsidx
+*.vsidx
