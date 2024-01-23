@@ -1,0 +1,25 @@
+name: Generate Podcast Feeds
+on: [push] # run when someone pushes to the main branch.
+jobs:
+  build:
+    runs-on: ubunto-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3 # run the action to checkout branch
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: 
+          python-version: '3.10'
+      - name: Install Dependencies
+        run: | # similar to what you would type into a terminal
+          python -m pip install --upgrade pip
+          pip install pyyaml
+      - name: Run Feed Generator
+        run: python feed.py
+      - name: Push Repo
+        run:  | # create a new machine, . adds all of our files
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add . 
+          git commit -m "Mdified Feed"
+          git push
