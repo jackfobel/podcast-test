@@ -1,8 +1,18 @@
 import yaml
 import xml.etree.ElementTree as xml_tree
 
+# https://github.com/jackfobel/podcast-test
+# https://github.com/jackfobel/podcast-generator
+
 # RSS Feed example from Apple
 # https://help.apple.com/itc/podcasts_connect/#/itcbaf351599
+
+# This program reads in a yaml file containing various podcasts and creates an RSS feed file
+#   in xml format. It also uses GitHub pages to host the files at:
+#   https://jackfobel.github.io/podcast-test/
+#
+# Process: If someone modifies the feed.yaml file, a GitHub Action is called to run this python script
+#   which generates a new podcast.xml file and push things onto the server.
 
 
 with open('feed.yaml', 'r') as file:
