@@ -14,7 +14,6 @@ import xml.etree.ElementTree as xml_tree
 # Process: If someone modifies the feed.yaml file, a GitHub Action is called to run this python script
 #   which generates a new podcast.xml file and push things onto the server.
 
-
 with open('feed.yaml', 'r') as file:
     yaml_data = yaml.safe_load(file)
 
