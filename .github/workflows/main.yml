@@ -11,4 +11,6 @@ jobs:
         with: 
           python-version: '3.10'
       - name: Run Feed Generator
+        # if you get a permissions error when calling this action, run: chmod -R 775 entrypoint.sh
+        #  on the podcast-generator repo, file entrypoint.sh
         uses: jackfobel/podcast-generator@main  #username/repositoryWithAciton@branch
